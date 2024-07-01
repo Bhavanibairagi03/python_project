@@ -1,0 +1,79 @@
+/* Apply styles to the header */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Style the form */
+form {
+    text-align: center;
+}
+
+/* Style the input field and button */
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button.button1 {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the table */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: none;
+    background: none;
+    
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+/* Style the labels for task status */
+.label {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.label.pending {
+    background-color: #FFA500;
+    color: white;
+}
+
+.label.done {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Style the update and delete buttons */
+.button2, .button3 {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.button2 {
+    background-color: #3498db;
+    color: white;
+}
+
+.button3 {
+    background-color: #e74c3c;
+    color: white;
+}
