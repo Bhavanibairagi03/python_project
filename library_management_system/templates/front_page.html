@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+  </head>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 50px;
+        font-size: 36px;
+        color: aliceblue;
+    }
+
+    .button-group {
+        margin-top: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    p {
+        color: red;
+    }
+    body {
+      background-color: rgb(18, 28, 25);
+    }
+</style>
+  <body>
+    <form action="/"></form>
+    <h1>Library Management System</h1>
+    <div class="button-group">
+      {% if error_message %}
+      <p>{{ error_message }}</p>
+      {% endif %}
+      <a
+        href="{{ url_for('user_login') }}"
+        type="button"
+        class="btn btn-primary btn-lg"
+        ><strong>User</strong></a
+      >
+      <a
+        href="{{ url_for('admin_login') }}"
+        type="button"
+        class="btn btn-primary btn-lg"
+        ><strong>Admin</strong></a
+      >
+    </div>
+  </body>
+</html>

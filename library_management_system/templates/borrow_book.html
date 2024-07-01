@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow a Book</title>
+    <!-- Add your CSS styles here -->
+    <style>
+    .borrow-button {
+        background-color: #007bff; /* Blue background color */
+        color: #ffffff; /* White text color */
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    body {
+        background-color: rgb(230, 199, 199);
+    }
+    h2 {
+        color: rgb(13, 13, 8);
+    }
+    </style>
+</head>
+<body>
+    <div class="borrow-container">
+        <h2>Borrow a Book</h2>
+        <form action="/borrow_book" method="post">
+            <label for="book_name">Book Name:</label><br>
+            <input type="text" id="book_name" name="book_name" required>
+            <br>
+            <label for="user_name">Your Name:</label><br>
+            <input type="text" id="user_name" name="user_name" required>
+            <br>
+            <p>You have borrowed: {{ borrowed_book }}</p>
+            <button type="submit" class="borrow-button">Borrow</button>
+            <a class="button" href="/user_navbar"><strong>Back to home</strong></a>
+        </form>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>/* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .search-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        form {
+            margin-top: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .transaction-history {
+            margin-top: 20px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #230a0a;
+        }
+        body {
+            background-attachment: fixed;
+            background-color: #181d22;
+        }
+        </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>View Dates</h1>
+        <form method="POST" action="/view_dates">
+            <label for="member_id">Enter Member ID:</label>
+            <input type="text" name="member_id" id="member_id" required>
+            <button type="submit">View Dates</button>
+        </form>
+    </div>
+
+    {% if transaction_details %}
+    <div class="transaction-history">
+        <h2>Due Books for Member ID: {{ member_id }}</h2>
+        <ul>
+            {% for transaction_detail in transaction_details %}
+            <li>
+                Book Title: {{ transaction_detail.book_title }}
+                Author: {{ transaction_detail.book_author }}
+                Due Date: {{ transaction_detail.book_due_date }}
+                Member Name: {{ transaction_detail.member_name }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <a class="button" href="/user_navbar"><strong>Back to home</strong></a>
+</body>
+</html>

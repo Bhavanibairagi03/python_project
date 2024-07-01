@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c18484;
+            margin: 0;
+            padding: 0;
+        }
+
+        .search-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .no-results {
+            color: rgb(28, 3, 3);
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Book Search</h1>
+        <form method="POST" action="/book_search">
+            <input type="text" name="search_query" placeholder="Search by title or author">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Display search results if available -->
+    {% if books %}
+    <div class="search-results">
+        <h2>Search Results for "{{ search_query }}"</h2>
+        <ul>
+            {% for book in books %}
+            <li>
+                {{ book.title }} by {{ book.author }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <!-- Display a message when no results are found -->
+    <div class="no-results">
+        <p>No results found for "{{ search_query }}".</p>
+    </div>
+    {% endif %}
+    <a class="button" href="/borrow_book"><strong>borrow book</strong></a><br>
+    <a class="button" href="/user_navbar"><strong>Back to home</strong></a>
+
+</body>
+</html>

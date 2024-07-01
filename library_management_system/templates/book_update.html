@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .update-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 50px auto;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="update-container">
+        <h1>Update Book Information</h1>
+        <form method="POST" action="/book_update">
+            <label for="book_id">Book ID:</label>
+            <input type="text" name="book_id" id="book_id" required>
+            <label for="updated_title">Updated Title:</label>
+            <input type="text" name="updated_title" id="updated_title" required>
+            <label for="updated_author">Updated Author:</label>
+            <input type="text" name="updated_author" id="updated_author" required>
+            <button type="submit">Update Book</button>
+        </form>
+    </div>
+    <a class="button" href="/admin_navbar"><strong>Back To Home</strong></a>
+</body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Orders</title>
+    <style>/* styles.css */
+
+        /* Apply some basic styling to the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        /* Style table headers */
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        /* Style table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+        h1 {
+            color: rgb(20, 32, 28);
+        }
+        body {
+            background-color: aqua;
+        }
+        </style>
+</head>
+<body>
+    <center><h1>Orders</h1></center>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Book Title</th>
+                <th>Member Name</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order['order_id'] }}</td>
+                    <td>{{ order['book_title'] }}</td>
+                    <td>{{ order['member_name'] }}</td>
+                    <td>{{ order['order_date'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        /* Define your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c54c4c;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #170b0b;
+        }
+
+        form {
+            background-color: #f1e7e7;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #efe4e4;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+</head>
+<!-- Include Bootstrap CSS and JavaScript -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+    
+    <h2>Books</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }} <a href="/create_transaction" class="button2">Select</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Members</h2>
+    <ul>
+        {% for member in members %}
+            <li>{{ member.name }} - ({{ member.email }})</li>
+        {% endfor %}
+    </ul>
+        <h2>Add Book</h2>
+        <form method="POST" action="/add_book">
+            <label for="title">Title:</label>
+            <input type="text" name="title" required><br>
+            <label for="author">Author:</label>
+            <input type="text" name="author" required><br>
+            <input type="submit" value="Add Book">
+
+        <h2>Add Member</h2>
+        <form method="POST" action="/add_member">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+            <input type="submit" value="Add Member">
+            <a class="button" href="/admin_navbar"><strong>Back to home</strong></a>
+
+        </form>
+    </form>
+</body>
+</html>

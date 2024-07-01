@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your CSS styles here -->
+</head>
+<style>
+    /* Add your CSS styles here */
+    .dashboard-container {
+        background-color: #280f0f;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ddd;
+    }
+
+    h1 {color: antiquewhite;
+        text-align: center;
+    }
+    body {
+        background-color: rgb(1, 1, 15);
+    }
+</style>
+<body>
+    <form action="/dashboard" method="post">
+    <div class="dashboard-container">
+        <center><h1>Dashboard</h1></center><br>
+        <center><p>Total Books: {{ total_books }}</p></center><br>
+        <center><p>Available Books: {{ available_books }}</p></center><br>
+        <center><p>Issued Books: {{ issued_books }}</p></center><br>
+        <center><p>Overdue Books: {{ overdue_books }}</p></center><br>
+    </div>
+    </form>
+</body>
+</html>
